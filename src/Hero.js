@@ -6,21 +6,21 @@ export class Hero {
   h = 15
   direction = null
   draw() {
-    Tools.ctx.fillRect(this.x, this.y, this.w, this.h)
     Tools.ctx.fillStyle = "blue"
+    Tools.ctx.fillRect(this.x, this.y, this.w, this.h)
   }
 
   move() {
     if (this.direction == "left") {
-      this.x -= 20
-      this.direction = null
+      this.x -= 7
       if (this.x <= 0) {
+        this.direction = null
         this.x = 0
       }
     } else if (this.direction == "right") {
-      this.x += 20
-      this.direction = null
+      this.x += 7
       if (this.x >= 550) {
+        this.direction = null
         this.x = 550
       }
     }
