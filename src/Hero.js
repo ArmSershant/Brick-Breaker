@@ -5,6 +5,7 @@ export class Hero {
   w = 150
   h = 15
   direction = null
+
   draw() {
     Tools.ctx.fillStyle = "blue"
     Tools.ctx.fillRect(this.x, this.y, this.w, this.h)
@@ -12,16 +13,14 @@ export class Hero {
 
   move() {
     if (this.direction == "left") {
-      this.x -= 7
+      this.x -= 8
       if (this.x <= 0) {
         this.direction = null
-        this.x = 0
       }
     } else if (this.direction == "right") {
-      this.x += 7
+      this.x += 8
       if (this.x >= 550) {
         this.direction = null
-        this.x = 550
       }
     }
     this.draw()

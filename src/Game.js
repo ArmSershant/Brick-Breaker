@@ -61,6 +61,18 @@ export class Game {
         if (y1 > y2 && y1 < y2 + elm.h) {
           elm.isLive = false
           this.score++
+          if (this.score == 10) {
+            this.ball.dx = 6
+            this.ball.dy = 6
+          }
+          if (this.score == 20) {
+            this.ball.dx = 7
+            this.ball.dy = 7
+          }
+          if (this.score == 30) {
+            this.ball.dx = 8
+            this.ball.dy = 8
+          }
         }
       }
     })
@@ -157,7 +169,7 @@ export class Game {
   }
 
   over() {
-    if (this.ball.y > this.line.y) {
+    if (this.ball.y > this.line.y + 5) {
       clearInterval(this.interval)
       Tools.ctx.clearRect(0, 0, 700, 650)
       Tools.ctx.globalCompositeOperation = "xor"
