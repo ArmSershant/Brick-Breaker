@@ -1,8 +1,8 @@
 import { Tools } from "./Tools.js"
 import {Hero} from "./Hero.js"
 export class Ball {
-  x = Hero.x;
-  y = Hero.y;
+  x = null
+  y = null
   dx = 5
   dy = 5
   w = 20
