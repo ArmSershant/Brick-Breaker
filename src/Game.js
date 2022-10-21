@@ -155,7 +155,6 @@ export class Game {
 
   win() {
     this.grid.lines.every((elm) => {
-      console.log(elm.isLive)
       if (!elm.isLive) {
         clearInterval(this.interval)
         Tools.ctx.clearRect(0, 0, 700, 650)
