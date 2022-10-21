@@ -1,0 +1,57 @@
+:root {
+   --color1: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+   --color2: linear-gradient(-45deg,
+         rgba(59, 173, 227, 1) 0%,
+         rgba(87, 111, 230, 1) 25%,
+         rgba(152, 68, 183, 1) 50%,
+         rgba(255, 53, 127, 1) 100%);
+}
+
+* {
+   border: none
+}
+
+#playBtn {
+   margin-left: 300px;
+}
+
+#canvas {
+   box-shadow: 10px 10px 30px 10px #4e4a77;
+   background-image: var(--color2);
+}
+
+.rainbow {
+   box-shadow: 5px 5px 15px 5px #4e4a77;
+   background-image: var(--color2);
+   border-radius: 4px;
+   color: #fff;
+   cursor: pointer;
+   padding: 4px 8px;
+   animation: AnimateBG 5s ease infinite;
+}
+
+.rainbow:hover {
+   box-shadow: 10px 10px 30px 10px #4e4a77;
+   background-image: var(--color1);
+   animation: slidebg 5s linear infinite;
+}
+
+@keyframes slidebg {
+   to {
+      background-position: 15vw;
+   }
+}
+
+@keyframes AnimateBG {
+   0% {
+      background-position: 0% 50%
+   }
+
+   50% {
+      background-position: 100% 50%
+   }
+
+   100% {
+      background-position: 0% 50%
+   }
+}
