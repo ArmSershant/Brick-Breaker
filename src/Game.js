@@ -12,24 +12,25 @@ export class Game {
   constructor() {
     this.ball.x = this.line.x + 50
     this.ball.y = this.line.y - 20
-    let spaced = false
+    let started = false
     document.body.onkeydown = (e) => {
       switch (e.code) {
         case "ArrowLeft":
-          e.preventDefault()
           this.line.direction = "left"
+          if (!started) {
+            e.preventDefault()
+            this.ball.border = "upLeft"
+            started = true
+          }
           break
         case "ArrowRight":
-          e.preventDefault()
           this.line.direction = "right"
-          break
-        case "Space":
-          if (!spaced) {
+          if (!started) {
             e.preventDefault()
             this.ball.border = "upRight"
-            spaced = true
-            break
+            started = true
           }
+          break
       }
     }
   }
