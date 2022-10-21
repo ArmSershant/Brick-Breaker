@@ -10,7 +10,7 @@ export class Game {
   score = 0
   interval = null
   constructor() {
-    this.ball.x = this.line.x + 10
+    this.ball.x = this.line.x + 50
     this.ball.y = this.line.y - 20
     let spaced = false
     document.body.onkeydown = (e) => {
