@@ -45,8 +45,8 @@ export class Grid {
   draw() {
     this.lines.forEach((elm) => {
       if (elm.isLive) {
-        Tools.ctx.fillRect(elm.x, elm.y, elm.w, elm.h)
         Tools.ctx.fillStyle = "hotpink"
+        Tools.ctx.fillRect(elm.x, elm.y, elm.w, elm.h)
       }
     })
   }
