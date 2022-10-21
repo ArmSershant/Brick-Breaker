@@ -1,5 +1,4 @@
 import { Tools } from "./Tools.js"
-import {Hero} from "./Hero.js"
 export class Ball {
   x = null
   y = null
