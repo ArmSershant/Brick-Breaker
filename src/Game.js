@@ -154,17 +154,15 @@ export class Game {
   }
 
   win() {
-    this.grid.lines.every((elm) => {
-      if (!elm.isLive) {
-        clearInterval(this.interval)
-        Tools.ctx.clearRect(0, 0, 700, 650)
-        Tools.ctx.globalCompositeOperation = "xor"
-        Tools.ctx.font = "75px Roboto"
-        Tools.ctx.fillStyle = "green"
-        Tools.ctx.fillText("You Win!", 190, 325)
-        Tools.ctx.fillText(`Your Score:${this.score}`, 130, 400)
-      }
-    })
+    if (this.grid.lines.every((line) => !line.isLive)) {
+      clearInterval(this.interval)
+      Tools.ctx.clearRect(0, 0, 700, 650)
+      Tools.ctx.globalCompositeOperation = "xor"
+      Tools.ctx.font = "75px Roboto"
+      Tools.ctx.fillStyle = "green"
+      Tools.ctx.fillText("You Win!", 190, 325)
+      Tools.ctx.fillText(`Your Score:${this.score}`, 130, 400)
+    }
   }
 
   over() {
